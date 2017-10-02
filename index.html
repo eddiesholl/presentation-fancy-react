@@ -32,8 +32,34 @@
 					<p>Eddie Sholl <a href="https://twitter.com/eddiesholl">@eddiesholl</a></p>
 				</section>
 				<section>
-					<h1>Javascript Onion</h1>
-					<h3>Crying just like a regular onion</h3>
+					<h1>Peeling the Javascript Onion</h1>
+				</section>
+				<section>
+					<div class="fragment ring">
+						Browser time!
+						<div class="fragment ring">
+							Your Babel
+							<div class="fragment ring">
+								React
+								<div class="fragment ring">
+									Atom
+									<div class="fragment ring">
+										My babel and eslint
+										<div class="fragment ring">
+											Generated Javascript snippets
+											<div class="fragment ring">
+												My plugin code
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<img class="height-300px" src="images/george-onion.gif"></img>
+					<h3 class="fragment">Cry just like a regular onion</h3>
 				</section>
 				<section>
 					<div class="flex-row flex-centered">
@@ -44,9 +70,37 @@
 						<div>
 							<h3>The Atom experience</h3>
 							<p class="fragment">No context switching</p>
+							<p class="fragment">Active and mature</p>
 							<p class="fragment">Please come and hack me!</p>
 						</div>
 					</div>
+				</section>
+				<section data-background-image="images/react-logo-og.png">
+					<div class="flex-row flex-centered">
+						<div class="fragment">
+							<p>Modular</p>
+							<p>Precise</p>
+							<p>Flexible</p>
+						</div>
+						<div class="flex-pad-100"></div>
+						<div class="fragment">
+							<p>Files</p>
+							<p>Verbose</p>
+							<p>Standards</p>
+						</div>
+					</div>
+				</section>
+				<section class="width-90pc" data-transition="zoom slide-out">
+					<div class="flex-row flex-centered">
+						<img class="primary-image" src="images/comp-per-day.png"></img>
+					</div>
+				</section>
+				<section class="width-90pc" data-transition="zoom">
+					<div class="flex-row flex-centered">
+						<img class="primary-image" src="images/test-per-day.png"></img>
+					</div>
+				</section>
+				<section>
 				</section>
 			</div>
 		</div>
@@ -60,6 +114,12 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				autoPlayMedia: true,
+				history: true,
+				fragments: true, // dev mode
+				// fragments: false, // dev mode
+				width: "90%",
+				height: "90%",
+				margin: 0.1,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },

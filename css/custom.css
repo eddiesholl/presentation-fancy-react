@@ -7,11 +7,44 @@
   flex-direction: row;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-centered {
   justify-content: space-around;
+  align-items: center;
+}
+.flex-spaced-out {
+  justify-content: space-between;
   align-items: center;
 }
 
 .flex-pad-100 {
   width: 100px;
+  flex-shrink: 0;
+}
+
+.primary-image {
+  height: 80%;
+}
+
+.width-90pc {
+  width: 90%;
+}
+
+.height-300px {
+  height: 300px;
+}
+
+.ring {
+  padding: 20px !important;
+  border: 2px #d7dae0 solid !important;
+  border-radius: 100% !important;
+  font-size: 24px !important;
+}
+
+.margin-20 {
+  margin: 20px;
 }
