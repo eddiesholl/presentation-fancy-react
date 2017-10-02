@@ -1,0 +1,52 @@
+.inner {
+  position: absolute;
+  width: 88%;
+  height: 94%;
+  top: 3%;
+  left: 12%;
+  background-color: #282c34;
+}
+
+.bg-image {
+  width: 100%
+}
+
+.bg-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.layout-middle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.center-area {
+  color: #d7dae0;
+  background-color: #282c34;
+  flex-grow: 1;
+  font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif
+}
+
+.pframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.image-width {
+  width: 100%;
+}
+.image-height {
+  height: 100%;
+}
