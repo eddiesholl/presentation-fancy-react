@@ -21,7 +21,22 @@
   align-items: center;
 }
 
+.flex-end {
+  align-items: flex-end;
+}
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-g-1 {
+  flex-grow: 1;
+}
+
 .flex-pad-100 {
+  width: 100px;
+  flex-shrink: 0;
+}
+.flex-pad-30 {
   width: 100px;
   flex-shrink: 0;
 }
@@ -32,6 +47,9 @@
 
 .width-90pc {
   width: 90%;
+}
+.width-50pc {
+  width: 50%;
 }
 
 .height-300px {
@@ -47,4 +65,31 @@
 
 .margin-20 {
   margin: 20px;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: green;
+}
+
+.color-blue {
+  color: blue;
+}
+.color-light-blue {
+  color: light-blue;
+}
+.img {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.medium-img {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: 100px;
+  height: 100px;
 }
