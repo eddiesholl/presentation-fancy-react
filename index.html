@@ -283,6 +283,32 @@
 				</section>
 
 				<section>
+					<h3>eslint WTF?!</h3>
+					<p>eval, new Function(), json parsing</p>
+					<pre><code>const { allowUnsafeNewFunction } = require("loophole")
+
+    const e = this.engine
+    let config
+    allowUnsafeNewFunction(function() {
+      config = e.getConfigForFile(filePath)
+    })
+    const linterResult = this.linter.verifyAndFix(
+      text,
+      config
+    )</pre></code>
+					<p>https://github.com/AtomLinter/linter-eslint/issues/253</p>
+
+					<aside class="notes">
+						<ul>
+							<li>Atom doesn't allow unsafe-eval</li>
+							<li>Dependency of dependency of dependency</li>
+							<li>Patience wearing thin</li>
+						</ul>
+					</aside>
+
+				</section>
+
+				<section>
 					<h1>We need to talk...</h1>
 					<h3 class="fragment">about ASTs</h3>
 
@@ -315,13 +341,13 @@ Once upon a time, an unsuspecting Mozilla engineer created an API in Firefox tha
     params: [ Pattern ];
     body: FunctionBody;
 }
-
+// es5 variable
 interface VariableDeclaration <: Declaration {
     type: "VariableDeclaration";
     declarations: [ VariableDeclarator ];
     kind: "var";
 }
-
+// es2015 variables
 extend interface VariableDeclaration {
     kind: "var" | "let" | "const";
 }</pre></code>
@@ -398,7 +424,7 @@ interface JSXAttribute <: Node {
 				</section>
 
 				<section>
-					<img class="height-300px" src="images/george-onion.gif"></img>
+					<img class="height-300px img" src="images/george-onion.gif"></img>
 					<h3 class="fragment">Tastes like regular onion</h3>
 				</section>
 
@@ -452,6 +478,10 @@ interface JSXAttribute <: Node {
 						</aside>
 				</section>
 
+				<section data-background-image="images/IMG_5848.JPG" data-background-size="contain" data-transition="fade-in">
+					<h3>Thank you</h3>
+					<p>atom.io/packages/fancy-react</p>
+				</section>
 			</div>
 		</div>
 
