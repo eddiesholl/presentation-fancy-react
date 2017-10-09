@@ -35,6 +35,7 @@
 						<ul>
 							<li>Welcome everyone</li>
 							<li>Thanks for having me, first time talking</li>
+							<li>Talk about fancy react, an atom plugin to speed up react development</li>
 							<li>Useful and interesting</li>
 						</ul>
 					</aside>
@@ -42,7 +43,7 @@
 				</section>
 
 				<section>
-					<p class="color-blue">atom.io/packages/fancy-react</p>
+					<p class="color-orange">atom.io/packages/fancy-react</p>
 					<div class="flex-row">
 						<div class="flex-column flex-end flex-g-1">
 							<span>It might help you</span>
@@ -142,13 +143,14 @@
 					</div>
 					<aside class="notes">
 						<ul>
+							<li>First 3 months of data</li>
 							<li>Actual git repo data</li>
-							<li>Felt like a lot more</li>
+							<li>A bit sad, felt like a lot more</li>
 						</ul>
 					</aside>
 
 				</section>
-				<section class="width-90pc" data-transition="zoom">
+				<section class="width-90pc" data-transition="fade">
 					<div class="flex-row flex-centered">
 						<img class="primary-image" src="images/test-per-day.png"></img>
 					</div>
@@ -168,8 +170,27 @@
 
 					<aside class="notes">
 						<ul>
-							<li>Not that interesting</li>
-							<li>So far, I have explained to you that I'm a modern web developer</li>
+							<li>So far, not that interesting</li>
+							<li>I have basically explained to you that I'm a modern web developer</li>
+						</ul>
+					</aside>
+
+				</section>
+
+				<section>
+					<h3>Actions</h3>
+					<div class="flex-row">
+						<div class="flex-column flex-g-1">
+							<span>Generate component from JSX snippet</span>
+							<span>Generate tests</span>
+							<span>Switch between source <-> test file</span>
+						</div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Quick introduction</li>
+							<li>MVP set of actions</li>
 						</ul>
 					</aside>
 
@@ -181,6 +202,7 @@
 							<li>Allows you to finish your thoughts</li>
 							<li>Expands to find the scope of the nearest starting JSX element</li>
 							<li>Creates props from snippet</li>
+							<li>Fairly strict structure</li>
 						</ul>
 					</aside>
 				</section>
@@ -202,17 +224,6 @@
 							<li>Should become standalone</li>
 						</ul>
 					</aside>
-				</section>
-
-				<section>
-					<h3>Actions</h3>
-					<div class="flex-row">
-						<div class="flex-column flex-g-1">
-							<span>Generate component from JSX snippet</span>
-							<span>Generate tests</span>
-							<span>Switch between source <-> test file</span>
-						</div>
-					</div>
 				</section>
 
 				<section>
@@ -304,16 +315,13 @@
 					<h3>eslint WTF?!</h3>
 					<p>eval, new Function(), json parsing</p>
 					<pre><code>const { allowUnsafeNewFunction } = require("loophole")
-
-    const e = this.engine
-    let config
-    allowUnsafeNewFunction(function() {
-      config = e.getConfigForFile(filePath)
-    })
-    const linterResult = this.linter.verifyAndFix(
-      text,
-      config
-    )</pre></code>
+// ...
+const e = this.engine
+let config
+allowUnsafeNewFunction(function() {
+  config = e.getConfigForFile(filePath)
+})
+const linterResult = this.linter.verifyAndFix(text, config)</pre></code>
 					<p>https://github.com/AtomLinter/linter-eslint/issues/253</p>
 
 					<aside class="notes">
@@ -395,6 +403,80 @@ interface JSXAttribute <: Node {
     value: Literal | JSXExpressionContainer |
 			JSXElement | null;
 }</pre></code>
+				</section>
+
+				<section>
+					<div class="width-90pc">
+						<pre><code>Program
+body:
+|	ImportDeclaration
+|	source:
+|	|	Literal react
+|	|	value:
+|	|	|	undefined
+|	specifiers:
+|	|	ImportDefaultSpecifier
+|	|	local:
+|	|	|	Identifier React
+|	|	ImportSpecifier
+|	|	local:
+|	|	|	Identifier Component
+|	ImportDeclaration
+|	source:
+|	|	Literal ./logo.svg
+|	|	value:
+|	|	|	undefined
+|	specifiers:
+|	|	ImportDefaultSpecifier
+|	|	local:
+|	|	|	Identifier logo
+|	ImportDeclaration
+|	source:
+|	|	Literal ./App.css
+|	|	value:
+|	|	|	undefined
+|	specifiers:
+|	ImportDeclaration
+|	source:
+|	|	Literal components/BottomWidget/BottomWidget
+|	|	value:
+|	|	|	undefined
+|	specifiers:
+|	|	ImportDefaultSpecifier
+|	|	local:
+|	|	|	Identifier BottomWidget
+|	ClassDeclaration
+|	id:
+|	|	Identifier App
+|	body:
+|	|	ClassBody
+|	|	body:
+|	|	|	MethodDefinition [object Object]
+|	|	|	key:
+|	|	|	|	Identifier render
+|	|	|	value:
+|	|	|	|	FunctionExpression
+|	|	|	|	body:
+|	|	|	|	|	BlockStatement
+|	|	|	|	|	body:
+|	|	|	|	|	|	ReturnStatement
+|	|	|	|	|	|	argument:
+|	|	|	|	|	|	|	JSXElement
+|	|	|	|	params:
+|	ExportDefaultDeclaration
+|	declaration:
+|	|	Identifier App
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Taken from App.js</li>
+							<li>Just a subset of nodes</li>
+							<li>Snippets offer the 80/20 benefits</li>
+							<li>AST pays off in the end</li>
+						</ul>
+					</aside>
+
 				</section>
 
 				<section>
